@@ -1,0 +1,13 @@
+@charset 'utf-8';
+// @import './variables.scss';
+
+@mixin round($size) {
+  width: $size !important;
+  height: $size !important;
+  border-radius: 50%;
+}
+@mixin flex($row, $col) {
+  display: flex;
+  justify-content: $row;
+  align-items: $col;
+}

@@ -1,0 +1,8 @@
+node_modules/
+dist/
+index.html
+components.d.ts
+CHANGELOG.md
+auto-imports.d.ts
+babel.config.js
+jest.config.js
