@@ -1,6 +1,7 @@
 const catcheKey = {
   TokenKey: 'token',
-  LangKey: 'lang'
+  LangKey: 'lang',
+  MenuKey: 'menu'
 };
 class Cache {
   getToken = (): string => {
@@ -17,6 +18,12 @@ class Cache {
   };
   clearStorage = (): void => {
     window.localStorage.clear();
+  };
+  setMenuStatus = (value: string): void => {
+    window.localStorage.setItem(catcheKey.MenuKey, value);
+  };
+  getMenuStatus = (): boolean => {
+    return Boolean(window.localStorage.getItem(catcheKey.LangKey)) || true;
   };
 }
 export default new Cache();

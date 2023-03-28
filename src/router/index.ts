@@ -9,8 +9,26 @@ const routes: Array<RouteRecordRaw> = [
       keepAlive: true,
       requireAuth: true
     },
-    component: () => import('@/pages/index.vue')
-  },
+    component: () => import('@/pages/layout/index.vue'),
+    children: [
+      {
+        path: '/model',
+        name: 'model',
+        meta: {
+          title: 'model'
+        },
+        component: () => import('@/pages/model/model-list.vue')
+      },
+      {
+        path: '/model-detail',
+        name: 'model-detail',
+        meta: {
+          title: 'model'
+        },
+        component: () => import('@/pages/model/model-detail.vue')
+      }
+    ]
+  }
 ];
 
 const router = createRouter({

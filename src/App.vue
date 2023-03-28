@@ -11,7 +11,7 @@
     height: 100%;
     width: 100%;
     font-size: 16px;
-    background-color: #f5f5f9;
+    background-color: var(--bg-color);
     overflow: hidden;
   }
   #app {

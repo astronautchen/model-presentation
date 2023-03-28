@@ -56,6 +56,11 @@ export default defineConfig({
         full: 'w-full h-full',
         cp: 'cursor-pointer'
       },
+      rules: [
+        ['round', { 'border-radius': '50%' }],
+        ['r6', { 'border-radius': '6px' }],
+        ['shadow', { 'box-shadow': '0px 2px 6px 0px #f0f0f5' }]
+      ],
       transformers: [transformerDirectives(), transformerVariantGroup()]
     }),
     PkgConfig(),

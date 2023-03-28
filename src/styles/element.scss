@@ -1,0 +1,32 @@
+$--colors: (
+  'primary': (
+    'base': #6d70ff
+  ),
+  'success': (
+    'base': #71dd37
+  ),
+  'warning': (
+    'base': #ffc041
+  ),
+  'danger': (
+    'base': #ff8f7c
+  ),
+  'error': (
+    'base': #ff3e1d
+  ),
+  'info': (
+    'base': #03c3ec
+  ),
+  'default': (
+    'base': #eeeeee
+  )
+);
+@forward 'element-plus/theme-chalk/src/common/var.scss' with (
+  // do not use same name, it will override.
+  $colors: $--colors,
+  //   $table: $--table,
+  //   $dialog: $--dialog,
+  //   $button-padding-horizontal: ('default': 80px),
+  //   $table-cell-padding: ('default': 0 20px)
+);
+@use 'element-plus/theme-chalk/src/index.scss' as *;

@@ -52,6 +52,7 @@ module.exports = {
       'error',
       ['script-setup'] // "script-setup", "composition", "composition-vue2", or "options"
     ],
-    'vue/block-lang': ['error', { script: { lang: 'ts' } }]
+    'vue/block-lang': ['error', { script: { lang: 'ts' } }],
+    '@typescript-eslint/no-this-alias': 'off'
   }
 };
