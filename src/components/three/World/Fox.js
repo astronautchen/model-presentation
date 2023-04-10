@@ -24,7 +24,9 @@ export default class Fox {
   setModel() {
     // console.log('this.resource')
     this.model = this.resource.scene;
-    this.model.scale.set(0.1, 0.1, 0.1);
+    // this.model.rotation.y = -Math.PI * 0.5;
+    // this.model.scale.set(0.1, 0.1, 0.1);
+    // this.model.position.set(3, 0.2, 0);
     // this.model.position.y = 0.8;
     // this.model.position.z = -2;
     this.scene.add(this.model);
@@ -32,6 +34,7 @@ export default class Fox {
     this.model.traverse((child) => {
       if (child instanceof THREE.Mesh) {
         child.castShadow = true;
+        // child.material.needsUpdate = true;
       }
     });
   }

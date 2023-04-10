@@ -9,6 +9,9 @@ import World from './World/World.js';
 import Resources from './Utils/Resources.js';
 import Label from './World/Lable.js';
 import Ray from './World/Ray.js';
+import Mouse from './Utils/Mouse.js';
+import Canvas from './Utils/Canvas.js';
+// import Renderer3D from './CSS3DRender';
 
 import sources from './sources.js';
 
@@ -33,12 +36,17 @@ export default class Experience {
     this.sizes = new Sizes();
     this.time = new Time();
     this.scene = new THREE.Scene();
+    this.cssScene = new THREE.Scene();
     this.resources = new Resources(sources);
     this.camera = new Camera();
     this.renderer = new Renderer();
     this.world = new World();
     this.ray = new Ray();
     this.label = new Label();
+    this.mouse = new Mouse();
+    this.canvas = new Canvas();
+    // this.Renderer3D = new Renderer3D();
+    // this.mouseRay = new Ray();
 
     // Resize event
     this.sizes.on('resize', () => {
@@ -54,15 +62,18 @@ export default class Experience {
   resize() {
     this.camera.resize();
     this.renderer.resize();
+    // this.Renderer3D.resize();
   }
 
   update() {
     this.camera.update();
     this.world.update();
     this.renderer.update();
+    // this.Renderer3D.update();
     if (this.label.points.length) {
       this.label.updateLabel();
     }
+    this.mouse.update();
   }
 
   destroy() {
@@ -89,6 +100,7 @@ export default class Experience {
 
     this.camera.controls.dispose();
     this.renderer.instance.dispose();
+    // this.Renderer3D.instance.dispose();
     this.scene = null;
     instance = null;
 

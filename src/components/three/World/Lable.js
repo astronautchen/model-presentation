@@ -18,14 +18,6 @@ export default class Label {
       el.innerHTML = `
       <div class="label">1</div>
       <div class="text"> Lorem ipsum, dolor sit amet consectetur adipisicing elit </div>`;
-      // father.append(
-      //   `
-      //   <div class="point point-${index}">
-      //     <div class="label">1</div>
-      //     <div class="text"> Lorem ipsum, dolor sit amet consectetur adipisicing elit </div>
-      //   </div>
-      //   `
-      // );
       el.classList.add('point', `point-${index}`);
       father.append(el);
       this.points.push({

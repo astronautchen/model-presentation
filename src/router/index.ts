@@ -28,6 +28,14 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import('@/pages/model/model-detail.vue')
       }
     ]
+  },
+  {
+    path: '/test',
+    name: 'test',
+    meta: {
+      title: 'model'
+    },
+    component: () => import('@/pages/model/model-detail.vue')
   }
 ];
 

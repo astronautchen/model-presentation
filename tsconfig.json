@@ -14,18 +14,11 @@
     "sourceMap": true,
     "resolveJsonModule": true,
     "esModuleInterop": true,
-    "lib": [
-      "esnext",
-      "dom"
-    ],
+    "lib": ["esnext", "dom"],
     "baseUrl": "./",
     "paths": {
-      "@": [
-        "src"
-      ],
-      "@/*": [
-        "src/*"
-      ]
+      "@": ["src"],
+      "@/*": ["src/*"]
     }
   },
   "include": [
@@ -34,7 +27,7 @@
     "src/**/*.tsx",
     "src/**/*.vue",
     "src/components/three/Experience.js",
-    "src/components/three/utils/Sizes.js",
+    "src/components/three/utils/Sizes.js"
   ],
   "references": [
     {

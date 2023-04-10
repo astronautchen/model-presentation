@@ -4,8 +4,8 @@
   let experience: any = null;
   onMounted(() => {
     experience = new Experience(document.querySelector('canvas.webgl'));
-    console.log('1,', document.getElementById('father'));
-    experience.label.initLabel(document.getElementById('father'), [[1.0, 0.0036051, 0.31656]]);
+    // experience.canvas.setupCanvasDrawing(document.getElementById('drawing-canvas'));
+    // experience.label.initLabel(document.getElementById('father'), [[1.0, 0.0036051, 0.31656]]);
   });
   onBeforeUnmount(() => {
     experience.destroy();
@@ -19,7 +19,15 @@
 </script>
 <template>
   <div id="father" class="relative full">
-    <canvas class="webgl full absolute left-0 top-0"></canvas>
+    <div id="css" class="flex-1 absolute left-0 top-0"></div>
+    <canvas
+      id="drawing-canvas"
+      height="150"
+      width="600"
+      style="width: 200px; height: 50px"
+      class="absolute right-0 top-0 z-99"
+    ></canvas>
+    <canvas class="webgl flex-1 absolute left-0 top-0"></canvas>
     <div class="c-#f00 absolute left-0 top-0 info-card r6">
       <div>撒打发立刻就拉萨的开发add是放到</div>
       <div> 阿斯顿分厘卡士大夫立刻 阿斯蒂芬卢卡斯</div>
@@ -37,6 +45,9 @@
   </div>
 </template>
 <style lang="scss">
+  #css {
+    // z-index: 99;
+  }
   .point {
     position: absolute;
     top: 50%;
