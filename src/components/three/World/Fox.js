@@ -1,8 +1,9 @@
 import * as THREE from 'three';
 import Experience from '../Experience.js';
-
-export default class Fox {
+import EventEmitter from '../Utils/EventEmitter.js';
+export default class Fox extends EventEmitter {
   constructor() {
+    super();
     this.experience = new Experience();
     this.scene = this.experience.scene;
     this.resources = this.experience.resources;
@@ -24,13 +25,13 @@ export default class Fox {
   setModel() {
     // console.log('this.resource')
     this.model = this.resource.scene;
+    this.model.name = 'fd';
     // this.model.rotation.y = -Math.PI * 0.5;
     // this.model.scale.set(0.1, 0.1, 0.1);
     // this.model.position.set(3, 0.2, 0);
     // this.model.position.y = 0.8;
     // this.model.position.z = -2;
     this.scene.add(this.model);
-
     this.model.traverse((child) => {
       if (child instanceof THREE.Mesh) {
         child.castShadow = true;

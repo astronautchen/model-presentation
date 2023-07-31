@@ -24,7 +24,7 @@
           <i inline-flex i="mdi-emoticon-devil-outline" class="mr-[14px]" />
           <span>MO展示</span>
         </el-menu-item>
-        <el-menu-item index="/">
+        <el-menu-item index="/playground">
           <i inline-flex i="mdi-square-rounded-badge-outline" class="mr-[14px]" />
           <span>MO广场</span>
         </el-menu-item>

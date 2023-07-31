@@ -11,6 +11,8 @@ import Label from './World/Lable.js';
 import Ray from './World/Ray.js';
 import Mouse from './Utils/Mouse.js';
 import Canvas from './Utils/Canvas.js';
+import Repo from './World/Repo.js';
+// import Cube from './World/Cube.js';
 // import Renderer3D from './CSS3DRender';
 
 import sources from './sources.js';
@@ -43,8 +45,10 @@ export default class Experience {
     this.world = new World();
     this.ray = new Ray();
     this.label = new Label();
+    // this.cube = new Cube();
     this.mouse = new Mouse();
     this.canvas = new Canvas();
+    this.repo = new Repo();
     // this.Renderer3D = new Renderer3D();
     // this.mouseRay = new Ray();
 
@@ -98,7 +102,8 @@ export default class Experience {
       }
     });
 
-    this.camera.controls.dispose();
+    // this.camera.controls.dispose();
+    this.camera.orbit.dispose();
     this.renderer.instance.dispose();
     // this.Renderer3D.instance.dispose();
     this.scene = null;

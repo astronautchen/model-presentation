@@ -9,6 +9,14 @@
       <el-button type="primary">123</el-button>
     </div>
     <div frc>
+      <div
+        class="drag"
+        draggable="true"
+        @dragstart="handleDragStart"
+        @drag="handleDrag"
+        @dragend="handleDragEnd"
+        >拖一下试试</div
+      >
       <i
         inline-flex
         class="i-mdi-white-balance-sunny dark:i-mdi-moon-waning-crescent cp"

@@ -1,4 +1,9 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+  import { useResizeStore } from '@/store/window';
+
+  const { resizeObs } = useResizeStore();
+  resizeObs();
+</script>
 <template>
   <el-config-provider>
     <RouterView />

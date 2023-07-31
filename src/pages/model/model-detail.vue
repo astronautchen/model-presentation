@@ -5,7 +5,7 @@
   onMounted(() => {
     experience = new Experience(document.querySelector('canvas.webgl'));
     // experience.canvas.setupCanvasDrawing(document.getElementById('drawing-canvas'));
-    // experience.label.initLabel(document.getElementById('father'), [[1.0, 0.0036051, 0.31656]]);
+    // experience.label.initLabel(document.getElementById('father'), [[5, 5, 0]]);
   });
   onBeforeUnmount(() => {
     experience.destroy();
@@ -15,6 +15,14 @@
   const rotate = ref(false);
   const changeAutoRotate = (val: boolean) => {
     experience.camera.setAutoRotate(val);
+  };
+  const test = () => {
+    console.log(experience.scene.toJSON());
+    // experience.repo.setLine()
+  };
+  /* 拖拽元素响应事件 */
+  const handleDragEnd = (e) => {
+    console.log('dragEnd', e);
   };
 </script>
 <template>
@@ -37,6 +45,11 @@
       ></div>
       <el-button @click="experience.camera.setCameraOrient('front')">前视图</el-button>
       <el-button @click="experience.camera.setCameraOrient('back')">后视图</el-button>
+      <br />
+      <el-button mt-4 @click="test">加线</el-button>
+      <div mt-4>
+        <div class="drag" draggable="true" @click="handleDragEnd">拖一下试试</div>
+      </div>
     </div>
     <!-- <div class="point point-0">
       <div class="label">1</div>
@@ -48,6 +61,7 @@
   #css {
     // z-index: 99;
   }
+
   .point {
     position: absolute;
     top: 50%;

@@ -26,6 +26,14 @@ const routes: Array<RouteRecordRaw> = [
           title: 'model'
         },
         component: () => import('@/pages/model/model-detail.vue')
+      },
+      {
+        path: '/playground',
+        name: 'playground',
+        meta: {
+          title: 'playground'
+        },
+        component: () => import('@/pages/playground/index.vue')
       }
     ]
   },

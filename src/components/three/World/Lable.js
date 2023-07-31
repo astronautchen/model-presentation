@@ -39,6 +39,7 @@ export default class Label {
       const screenPosition = point.position.clone();
       screenPosition.project(this.camera.instance);
       this.ray.instance.setFromCamera(screenPosition, this.camera.instance);
+
       const intersects = this.ray.instance.intersectObjects(this.scene.children, true);
       if (intersects.length === 0) {
         point.element.classList.add('visible');

@@ -1,17 +1,21 @@
 import * as THREE from 'three';
 import Experience from './Experience.js';
 import { CSS3DRenderer } from 'three/examples/jsm/renderers/CSS3DRenderer.js';
-
-export default class Renderer {
+import EventEmitter from './Utils/EventEmitter.js';
+export default class Renderer extends EventEmitter {
   // cssInstance;
   constructor() {
+    super();
     this.experience = new Experience();
     this.canvas = this.experience.canvas;
     this.sizes = this.experience.sizes;
     this.scene = this.experience.scene;
     this.camera = this.experience.camera;
     this.cssScene = this.experience.cssScene;
-
+    // this.canvas.addEventListener('pointerdown', (event) => {
+    //   // this.trigger('pointerdown', event);
+    //   this.action = ACTION_SELECT;
+    // });
     this.setInstance();
   }
 
@@ -20,7 +24,6 @@ export default class Renderer {
       canvas: this.canvas,
       antialias: true
     });
-    console.log('像素比', Math.min(this.sizes.pixelRatio, 2));
     this.instance.physicallyCorrectLights = true;
     this.instance.outputEncoding = THREE.sRGBEncoding;
     this.instance.toneMapping = THREE.CineonToneMapping;
